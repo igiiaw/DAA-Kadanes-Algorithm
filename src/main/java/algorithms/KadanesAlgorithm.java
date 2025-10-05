@@ -1,8 +1,8 @@
-package Algorithm;
+package algorithms;
 
-import Metric.Tracker;
+import metrics.PerformanceTracker;
 
-public class Kadanes {
+public class KadanesAlgorithm {
     public static class Result {
         public int maxSum;
         public int start;
@@ -13,21 +13,21 @@ public class Kadanes {
             this.end = end;
         }
     }
-    public static Result findMaxSubarray(int[] arr, Tracker tracker) {
+    public static Result findMaxSubarray(int[] arr, PerformanceTracker performanceTracker) {
         if (arr == null || arr.length == 0)
             throw new IllegalArgumentException("Array cannot be null or empty");
         int maxSoFar = arr[0];
         int maxEndingHere = arr[0];
         int start = 0, end = 0, tempStart = 0;
         for (int i = 1; i < arr.length; i++) {
-            tracker.incrementArrayAccess(1);
+            performanceTracker.incrementArrayAccess(1);
             if (maxEndingHere + arr[i] < arr[i]) {
                 maxEndingHere = arr[i];
                 tempStart = i;
             } else {
                 maxEndingHere += arr[i];
             }
-            tracker.incrementComparison(1);
+            performanceTracker.incrementComparison(1);
             if (maxEndingHere > maxSoFar) {
                 maxSoFar = maxEndingHere;
                 start = tempStart;
