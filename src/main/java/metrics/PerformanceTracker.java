@@ -1,6 +1,6 @@
-package Metric;
+package metrics;
 
-public class Tracker {
+public class PerformanceTracker {
     private long comparisons = 0;
     private long arrayAccesses = 0;
     private long startTime;
