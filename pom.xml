@@ -10,7 +10,7 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>Kadanes Algorithm</name>
+    <name>Kadanes algorithms</name>
     <description>Maximum subarray sum with position tracking and performance metrics</description>
 
     <properties>
